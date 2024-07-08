@@ -1,47 +1,52 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.main{
-    background-color:rgb(147, 214, 250),
-}
 
-.logo{
+.logo {
     width: 120px;
 }
 
-.banner1{
+.banner1 {
     object-fit: cover;
-height: 300px;
-width: 100%;
+    height: 300px;
+    width: 100%;
 }
-.banner2{
+
+.banner2 {
     object-fit: cover;
-height: 300px;
-width: 100%;
+    height: 300px;
+    width: 100%;
 }
-.banner3{
+
+.banner3 {
     object-fit: cover;
-height: 300px;
-width: 100%;
+    height: 300px;
+    width: 100%;
 }
-.banner4{
+
+.banner4 {
     object-fit: cover;
-height: 300px;
-width: 100%;
+    height: 300px;
+    width: 100%;
 }
-.banner5{
+
+.banner5 {
     object-fit: cover;
-height: 300px;
-width: 100%;
+    height: 300px;
+    width: 100%;
 }
-.face{
+
+.face {
     height: 40px;
 }
-.inst{
+
+.inst {
     height: 40px;
 }
-.wa{
+
+.wa {
     height: 40px;
 }
+
