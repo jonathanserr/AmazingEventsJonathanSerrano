@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.main{
+    background-color:rgb(147, 214, 250),
+}
 
 .logo{
     width: 120px;
@@ -33,4 +35,13 @@ width: 100%;
     object-fit: cover;
 height: 300px;
 width: 100%;
+}
+.face{
+    height: 40px;
+}
+.inst{
+    height: 40px;
+}
+.wa{
+    height: 40px;
 }
