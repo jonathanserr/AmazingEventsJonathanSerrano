@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.logo{
+    width: 120px;
+}
+
+.banner1{
+    object-fit: cover;
+height: 300px;
+width: 100%;
+}
+.banner2{
+    object-fit: cover;
+height: 300px;
+width: 100%;
+}
+.banner3{
+    object-fit: cover;
+height: 300px;
+width: 100%;
+}
+.banner4{
+    object-fit: cover;
+height: 300px;
+width: 100%;
+}
+.banner5{
+    object-fit: cover;
+height: 300px;
+width: 100%;
+}
