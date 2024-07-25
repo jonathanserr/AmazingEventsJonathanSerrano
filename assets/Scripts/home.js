@@ -201,10 +201,10 @@ let contenedor = document.getElementById("container1");
 for (let i = 0; i < data.events.length; i++) {
     let card = document.createElement("div");
     
-    card.className = 'col-lg-3 col-md-6 mb-4 d-flex flex-wrap';
+    card.className = 'col-lg-2 col-md-5 col-sm-10 m-4 d-flex flex-wrap';
 
     card.innerHTML = `
-    <img src="${data.events[i].image}" class="card-img-top h-50" alt="...">
+    <img src="${data.events[i].image}" class="card-img-top h-50" alt="${data.events[i].name}">
         <div class="card-body">
             <h5 class="card-title">${data.events[i].name}</h5>
             <p class="card-text">${data.events[i].description}</p>

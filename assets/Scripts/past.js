@@ -202,10 +202,10 @@ let contenedor = document.getElementById("container1");
 for (let i = 0; i < data.events.length; i++) {
     if (new Date(data.events[i].date) < new Date(data.currentDate)) {
         let card  = document.createElement("div");
-        card.className = 'col-lg-3 col-md-6 mb-4 d-flex flex-wrap';
+        card.className = 'col-lg-2 col-md-5 col-sm-10 m-4 d-flex flex-wrap';
         
         card.innerHTML = `
-            <img src="${data.events[i].image}" class="card-img-top" alt="${data.events[i].name}">
+            <img src="${data.events[i].image}" class="card-img-top h-50" alt="${data.events[i].name}">
             <div class="card-body d-flex flex-column">
                 <h5 class="card-title">${data.events[i].name}</h5>
                 <p class="card-text">${data.events[i].description}</p>
@@ -213,7 +213,7 @@ for (let i = 0; i < data.events.length; i++) {
                     <div>
                         <p>Price: ${data.events[i].price}$</p>
                     </div>
-                    <a href="./detailsAvengers.html" class="btn btn-primary">Details</a>
+                    <a href="../Pages/Details.html" class="btn btn-primary">Details</a>
                     </div>
             </div> 
         `;
