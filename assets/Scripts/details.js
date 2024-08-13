@@ -1,4 +1,4 @@
-console.log("Hello");
+console.log("hello deatils");
 
 const data = {
     currentDate: "2023-01-01",
@@ -195,82 +195,44 @@ const data = {
             __v: 0,
         },
     ],
-};
-
-let container = document.getElementById("container1");
-let checkboxContainer = document.getElementById("contCheckbox");
-
-function checkboxCategory() {
-  let categories = [...new Set(data.events.map(event => event.category))];
-  checkboxContainer.innerHTML = '';
-
-  categories.forEach(category => {
-    let checkbox = document.createElement('div');
-    checkbox.className = 'form-check';
-    checkbox.innerHTML = `
-            <input class="form-check-input" type="checkbox" value="${category}" id="${category}">
-            <label class="form-check-label text-success" for="${category}">${category}</label>
-        `;
-    checkboxContainer.appendChild(checkbox);
-  });
 }
 
-function eventFilter() {
-  let searches = document.querySelector('input[type="search"]').value.toLowerCase();
-  let arrayCategories = Array.from(document.querySelectorAll('.form-check-input:checked')).map(checkbox => checkbox.value);
-
-  let filterEvents = data.events.filter(event => {
-    let matchSearches = event.name.toLowerCase().includes(searches) || event.description.toLowerCase().includes(searches);
-    let matchCategories = arrayCategories.length === 0 || arrayCategories.includes(event.category);
-    return matchSearches && matchCategories;
-  });
-
-  loadEvents(filterEvents);
-}
-
-function loadEvents(events) {
-  container.innerHTML = '';
-
-  if (events.length === 0) {
-    container.innerHTML = '<p class="text-center">At this time we do not have events for your search</p>';
-    return;
-  }
-
-  let contCards = document.createElement('div');
-  contCards.className = 'row justify-content-center';
-
-  events.forEach(event => {
-    let card = document.createElement("div");
-    card.className = "bg-secondary bg-opacity-50 rounded-1 p-1 col-11 col-lg-3 col-md-5 col-sm-10 m-2 d-flex flex-wrap";
-    card.innerHTML = `
-            <img src="${event.image}" class="card-img-top h-50" alt="${event.name}">
-            <div class="card-body d-flex flex-column">
-                <h3 class="card-title text-center text-primary mb-1">${event.name}</h3>
-                <p class="card-text text-center">${event.description}</p>
-                <div class="d-flex justify-content-between align-items-center mt-auto">
-                    <div>
-                        <p class="mt-3 text-danger">Price: ${event.price}$</p>
-                    </div>
-                    <a href="./assets/Pages/Details.html?id=${event._id}" class="btn btn-primary">Details</a>
-                    </div>
-            </div> 
-        `;
-    contCards.appendChild(card);
-  });
-
-  container.appendChild(contCards);
-}
 
 document.addEventListener('DOMContentLoaded', function () {
-  checkboxCategory();
-  loadEvents(data.events);
-
-  document.querySelector('input[type="search"]').addEventListener('keyup', function (e) {
-    if (e.key) {
-      eventFilter();
-    }
-  document.querySelector('searchButton').addEventListener('click', eventFilter);
-  });
-
-  checkboxContainer.addEventListener('change', eventFilter);
+    let params = new URLSearchParams(window.location.search);
+    let eventId = params.get('id');
+    let event = data.events.find(e => e._id === eventId);
+    loadEventDetails(event);
 });
+
+function loadEventDetails(event) {
+
+    const detailContainer = document.getElementById("conDetails");
+
+    const assistance = event.assistance ? `<li class="list-group-item">Assistance: ${event.assistance}</li>` : '';
+    const estimate = event.estimate ? `<li class="list-group-item">Estimate: ${event.estimate}</li>` : '';
+
+    detailContainer.innerHTML = `    
+    <div class="row g-0">
+        <div class="col-md-6">
+            <img src="${event.image}" class=" img-fluid rounded-start" alt="image music">
+        </div>
+        <div class="col-md-6">
+            <div class="card-body">
+                <h2 class="card-title text-center text-primary">${event.name}</h2>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Date:  ${event.date}</li>
+                    <li class="list-group-item">Description:  ${event.description}</li>
+                    <li class="list-group-item">Category:  ${event.category}</li>
+                    <li class="list-group-item">Place:  ${event.place}</li>
+                    <li class="list-group-item">Capacity:  ${event.capacity}</li>
+                    ${assistance}
+                    ${estimate}
+                    <li class="list-group-item">Price:  US$${event.price}</li>
+                </ul> 
+        </div>
+    </div>
+        `;
+}
+
+
