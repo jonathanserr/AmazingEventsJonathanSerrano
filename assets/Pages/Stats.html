@@ -103,78 +103,73 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-            <div class="container-fluid mt-4">
-                <table class="table table-bordered">
+            <div class="table-content p-3">
+                <table class="table table-bordered table-hover" id="table-1">
                     <thead>
                         <tr>
-                            <th colspan="3" scope="col">Events Statics</th>
+                            <th scope="col" colspan="3">
+                                Events Statistics
+                            </th>
                         </tr>
                     </thead>
-
                     <tbody>
                         <tr>
-                            <td>Events with highest % of assistance</td>
-                            <td>Events with lowest % of assitance</td>
-                            <td>Events with larger capacity</td>
+                            <th scope="col">
+                                Events with highest % of assistance
+                            </th>
+                            <th scope="col">
+                                Events with lowest % of assistance
+                            </th>
+                            <th scope="col">
+                                Events with larger % capacity
+                            </th>
                         </tr>
-
                         <tr>
                             <td></td>
                             <td></td>
                             <td></td>
                         </tr>
                     </tbody>
-                        <tr>
-                            <th colspan="3" scope="col">Upcoming events statistics by category</th>
-                        </tr>
-                
-                    <tbody>
-                        <tr>
-                            <td>Categories</td>
-                            <td>Revenues</td>
-                            <td>Percentaje of assistance</td>
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-
-                    </tbody>
-                        <tr>
-                            <th colspan="3" scope="col">Past events statistics by category</th>
-                        </tr>
-                    
-                    <tbody>
-                        <tr>
-                            <td>Categories</td>
-                            <td>Revenues</td>
-                            <td>Percenatje of assitence</td>
-                        </tr>
-
-                        <tr>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-
-                        <tr>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-                    </tbody>
-
                 </table>
 
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col" colspan="3">
+                                Past events Statistics by category
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="col">Categories</th>
+                            <th scope="col">Revenues</th>
+                            <th scope="col">Percentage of assistance</th>
+                        </tr>
+                    </tbody>
+                    <tbody id="table-3">
+                    </tbody>
+                </table>
 
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col" colspan="3">
+                                Upcoming events statistics by category
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="col">Categories</th>
+                            <th scope="col">Revenues</th>
+                            <th scope="col">Percentage of estimate</th>
+                        </tr>
+                    </tbody>
+                    <tbody id="table-2">
+
+                    </tbody>
+                </table>
             </div>
     
 
@@ -202,6 +197,10 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
+        <!-- <script src="../Scripts/dataFetch.js"></script> -->
+        <script type="module" src="../Scripts/stats.js" ></script>
+        <script src="../Scripts/dataFetch.js"></script>
+     
     </div>
 </body>
 

@@ -36,6 +36,7 @@
     object-fit: cover;
     height: 300px;
     width: 100%;
+    padding-top: 1rem;
 }
 
 .face {
